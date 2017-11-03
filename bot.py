@@ -60,10 +60,11 @@ def main():
         if result == 'OK':
             while(True):
                 result, data = server.search(None, 'UNSEEN')
+                print(data)
                 for id in data[0].split():
                     mesadge=Get_msg(id)
                     print(bot.send_msg('339018008', mesadge[0]))
-                    if mesadge[1][0]!='':
+                    if mesadge[1]!='':
                         for file in mesadge[1]:
                             print(bot.sendDoc('339018008', file))
                     print(mesadge)
